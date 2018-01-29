@@ -1,0 +1,13 @@
+<div class="container">
+  <add-note
+    (addingNote)="addNote($event)">
+  </add-note>
+  <div class="row">
+    <div class="notes">
+      <note *ngFor="let note of notes; let i = index"
+        [note]="note"
+        [index]="i">
+      </note>
+    </div>
+  </div>
+</div>

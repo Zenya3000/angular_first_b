@@ -1,20 +1,27 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
-import { TestComponent } from './test/test.component';
-import { ZzzComponent } from './zzz/zzz.component';
+import { NotesComponent } from './notes/notes.component';
+import { NoteComponent } from './note/note.component';
+import { AddNoteComponent } from './add-note/add-note.component';
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent,
-    ZzzComponent
+    NotesComponent,
+    NoteComponent,
+    AddNoteComponent
+
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
