@@ -1,4 +1,5 @@
-.note{
-    box-sizing: border-box;
-    padding: 20px;
+.note {
+    display: block;
+    float: left;
+    margin: 0px 20px;
 }

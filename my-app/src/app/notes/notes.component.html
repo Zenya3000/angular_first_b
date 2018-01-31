@@ -1,13 +1,25 @@
+
 <div class="container">
-  <add-note
-    (addingNote)="addNote($event)">
-  </add-note>
   <div class="row">
-    <div class="notes">
-      <note *ngFor="let note of notes; let i = index"
-        [note]="note"
-        [index]="i">
-      </note>
+  <add-note
+      (addingNote)="addNote($event)"
+  ></add-note>
+</div>
+  <div class="row">
+    <note *ngFor=" let note of notes; let i = index;"
+    [note] = "note"
+    [index] = "i"
+    (removingNote)="removeNote($event)"
+    (changingFav)="changeFav($event)"
+    ></note>
+    <div class="row">
+      <app-test *ngFor="let thing of test; let i = index"
+        [val] = "thing"
+        [num] = "i"
+        (testingFunction) = "testing($event)"
+      ></app-test>
     </div>
   </div>
 </div>
+
+

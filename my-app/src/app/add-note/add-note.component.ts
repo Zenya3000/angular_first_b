@@ -7,22 +7,22 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class AddNoteComponent implements OnInit {
 
-  @Output() addingNote = new EventEmitter();
+  @Output() addingNote = new EventEmitter;
 
-  constructor(){ }
+  constructor() { }
 
   ngOnInit() {
   }
-
+  
   addNote(title, body){
     let data = {
       title: title.value,
-      body: body.value
-    }
-    console.log(data);
-    this.addingNote.emit(data);
-    title.value = '';
-    body.value = '';
+      body: body.value,
+      fav: false,
+      count: 0
   }
-
+  this.addingNote.emit(data);
+  title.value = '';
+  body.value = '';
+  }
 }

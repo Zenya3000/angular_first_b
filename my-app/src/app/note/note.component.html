@@ -1,26 +1,30 @@
 <div class="note">
-  <h3 *ngIf="!editing">{{note.title}}</h3>
-  <input *ngIf="editing" type="text"[(ngModel)]="note.title">
 
-  <p *ngIf="!editing">{{note.body}}</p>
-  <textarea class="form-control" *ngIf="editing" rows="3" [(ngModel)]="note.body"></textarea>
+    <br>
+    <br>
+    <h3 *ngIf="!editing">{{note.title}}</h3>
+    <input *ngIf="editing" type="text" [(ngModel)]="note.title">
+    <p *ngIf="!editing">{{note.body}}</p>
+    <textarea class="form-control" *ngIf="editing" [(ngModel)]="note.body"></textarea>
+    <app-star
+        [status] ="note.fav"
+        [count] = "note.count"
+        (changingStatus)="changeFav($event)"
 
-  <button
-  class="btn btn-danger"
-  (click)="removeNote(index)"
-  >Remove</button> 
-
-  <button
-  class="btn btn-info"
-  (click)="editNote()"
-  *ngIf="!editing"
-  >Edit</button>
-
-  <button
-  class="btn btn-seccess"
-  (click)="saveNote()"
-  *ngIf="editing"
-  >Save</button>
-
-
+    ></app-star>
+    <button
+        class="btn btn-danger"
+        (click)="removeNote(index)"
+        
+    >Remove note</button>
+    <button
+        class="btn btn-info"
+        (click)="editNote()"
+        *ngIf="!editing"
+    >Edit note</button>
+    <button
+        class="btn btn-success"
+        (click)="saveNote()"
+        *ngIf="editing"
+    >Save note</button>
 </div>

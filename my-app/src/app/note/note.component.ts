@@ -1,30 +1,25 @@
-import { NotesService } from '../-services/notes.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 
 @Component({
   selector: 'note',
   templateUrl: './note.component.html',
-  styleUrls: ['./note.component.css'],
-  providers: [NotesService]
+  styleUrls: ['./note.component.css']
+
 })
 export class NoteComponent implements OnInit {
-
   @Input() note;
   @Input() index;
-  @Output() removingNote = new EventEmitter();
+  @Output() removingNote = new EventEmitter;
+  @Output() changingFav = new EventEmitter;
+
+
+  constructor(
+  ) { }
 
   editing = false;
 
-  constructor(
-    private ns: NotesService
-  ) { }
-
   ngOnInit() {
-  }
-  addNote(data){
-    console.log('bla', data);
-    this.ns.addNote(data);
   }
   editNote(){
     this.editing = true;
@@ -32,8 +27,16 @@ export class NoteComponent implements OnInit {
   saveNote(){
     this.editing = false;
   }
-  removeNote(data){
-    this.ns.removeNote(data);
+  removeNote(i){
+    this.removingNote.emit(i);
+  }
+  changeFav(newFav){
+    let data = {
+      index: this.index,
+      newFav: newFav
+    }
+    this.changingFav.emit(data);
   }
 
+  
 }
