@@ -1,0 +1,6 @@
+<div class="main_user" style="width: 100%;">
+  <app-user *ngFor="let u of users; let i = index;"
+      [user] = "u"
+      [index] = "i">
+  </app-user>
+</div>

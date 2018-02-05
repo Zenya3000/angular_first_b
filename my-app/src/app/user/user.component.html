@@ -1,0 +1,16 @@
+
+<div class="item col-md-4">
+  <div class="top_item"><span><strong>{{user.name}}</strong></span>
+
+        <app-modal 
+          [address] = "user.address"
+          [name] = "user.name"
+          [phone] = "user.phone"
+          [index] = "index"
+          (updateData) = "update($event)"
+        ></app-modal>
+
+  </div>
+  <h4>{{user.email}}</h4>
+
+</div>

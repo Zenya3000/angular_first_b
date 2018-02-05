@@ -1,0 +1,39 @@
+
+
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">{{name}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="item_modal"  *ngIf="!edit">{{address.street}}</div>
+    <input type="text"   *ngIf="edit" [(ngModel)]="address.street">
+    <div class="item_modal"  *ngIf="!edit">{{address.suite}}</div>
+    <input type="text"  *ngIf="edit" [(ngModel)]="address.suite">
+    <div class="item_modal"  *ngIf="!edit">{{address.city}}</div>
+    <input type="text"  *ngIf="edit" [(ngModel)]="address.city">
+    <div class="item_modal"  *ngIf="!edit">{{address.zipcode}}</div>
+    <input type="text"  *ngIf="edit" [(ngModel)]="address.zipcode">
+    <div class="item_modal"  *ngIf="!edit">{{phone}}</div>
+    <input type="text"  *ngIf="edit" [(ngModel)]="phone">
+  </div>
+  <div class="modal-footer">
+
+    <button class="btn btn-edit"
+    (click)="editModal(index)"
+    *ngIf="!edit"
+    >Edit</button>
+
+    <button class="btn btn-default"
+    *ngIf="edit"
+    (click)="saveModal(content)"
+    
+    >Save</button>
+    <button type="button" class="btn btn-success" (click)="c('Close click')">Close</button>
+  </div>
+</ng-template>
+
+<button class="btn btn-success" (click)="open(content)">More info</button>

@@ -5,7 +5,7 @@ import { EventEmitter } from '@angular/core/src/event_emitter';
 @Component({
   selector: 'app-notes',
   templateUrl: './notes.component.html',
-  styleUrls: ['./notes.component.css'],
+  styleUrls: ['./notes.component.sass'],
   providers: [NotesService]
 })
 export class NotesComponent implements OnInit {
@@ -30,7 +30,6 @@ export class NotesComponent implements OnInit {
   }
   changeFav(data){
     this.ns.changeFav(data);
-    console.log(data);
   }
   testing(num){
     console.log("notes_tested", num);

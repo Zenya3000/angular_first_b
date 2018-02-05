@@ -3,7 +3,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'add-note',
   templateUrl: './add-note.component.html',
-  styleUrls: ['./add-note.component.css']
+  styleUrls: ['./add-note.component.sass']
 })
 export class AddNoteComponent implements OnInit {
 

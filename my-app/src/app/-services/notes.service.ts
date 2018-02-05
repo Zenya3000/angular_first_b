@@ -17,10 +17,12 @@ export class NotesService {
        NOTES[index] = newNote;
     }
     changeFav(data){
-        NOTES[data.index].fav = data.newFav;
+        NOTES[data.index].fav = data.status;
+        NOTES[data.index].count = data.count;
+        
     }
     countValues(data){
         NOTES[data.index].count = data.count;
-        console.log(NOTES);
+        
     }
 }

@@ -4,7 +4,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'note',
   templateUrl: './note.component.html',
-  styleUrls: ['./note.component.css']
+  styleUrls: ['./note.component.sass']
 
 })
 export class NoteComponent implements OnInit {
@@ -33,8 +33,10 @@ export class NoteComponent implements OnInit {
   changeFav(newFav){
     let data = {
       index: this.index,
-      newFav: newFav
+      status: newFav.status,
+      count: newFav.count
     }
+    
     this.changingFav.emit(data);
   }
 
